@@ -1,0 +1,38 @@
+<!doctype html>
+<head>
+	<style>
+		body {
+			background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+		}
+	</style>
+	<title> Sangeeth's BMI calculator</title>
+	
+	<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.1/build/pure-min.css" integrity="sha384-OJEosCEsv1dqUXQg8oECogXiofMTS459PfjECzxovIfwxW45PGrgoiwnaZxvrxgQ" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<h1>BMI calculator</h1>
+<body style="background-color:powderblue;">
+	
+
+<div class="main">
+<form class="pure-form" method="POST" action="/">
+	Enter your weight in kgs: <br>
+	<input type="text" name="weight"><br>
+	Enter your height in cms: <br>
+	<input type="text" name="height"><br>
+	<button type="submit" class="button-success pure-button" value="Submit">Submit</button>
+</form>
+</div>
+<br>
+<div class="main">
+	{% if bmi %}
+	<p> Your BMI is {{bmi}} </p>
+	{% endif %}
+
+
+</div>
+</body>	
